@@ -51,4 +51,6 @@ class VSPath {
   static const String vehicleCurrentLatitude =
       "Vehicle.CurrentLocation.Latitude";
   static const String vehicleFuelRate = "Vehicle.OBD.FuelRate";
+  static const String vehicleInsideTemperature =
+      "Vehicle.Cabin.HVAC.AmbientAirTemperature";
 }

@@ -6,7 +6,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class weather extends StatelessWidget {
-  const weather({Key? key}) : super(key: key);
+  int insideTemperatue;
+  int outsideTempearure;
+  weather(
+      {Key? key,
+      required this.insideTemperatue,
+      required this.outsideTempearure})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class weather extends StatelessWidget {
         color: Colors.black38,
       ),
       height: SizeConfig.safeBlockVertical * 30,
-      width: SizeConfig.blockSizeHorizontal * 35,
+      width: SizeConfig.blockSizeHorizontal * 20,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,13 +54,14 @@ class weather extends StatelessWidget {
                     SizedBox(
                       height: SizeConfig.safeBlockVertical,
                     ),
-                    Text('23 \u00B0', style: SizeConfig.smallnormalfont),
+                    Text(insideTemperatue.toString() + ' \u00B0',
+                        style: SizeConfig.smallnormalfont),
                     Text('Inside Car', style: SizeConfig.smallnormalfont),
                     SizedBox(
                       height: SizeConfig.safeBlockVertical,
                     ),
                     Text(
-                      ' 25 \u00B0',
+                      outsideTempearure.toString() + ' \u00B0',
                       style: SizeConfig.smallnormalfont,
                     ),
                     Text(
@@ -63,39 +70,39 @@ class weather extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    SizedBox(
-                        height: SizeConfig.safeBlockVertical * 5,
-                        width: SizeConfig.blockSizeHorizontal * 5,
-                        child: Image.asset(
-                          'images/cloud.png',
-                          color: Colors.orangeAccent,
-                        )),
-                    SizedBox(
-                      height: SizeConfig.safeBlockVertical,
-                    ),
-                    Text(
-                      'SUNNY',
-                      style: SizeConfig.smallnormalfont,
-                    ),
-                    Text(
-                      'wheather',
-                      style: SizeConfig.smallnormalfont,
-                    ),
-                    SizedBox(
-                      height: SizeConfig.safeBlockVertical,
-                    ),
-                    Text(
-                      '6 KM/H',
-                      style: SizeConfig.smallnormalfont,
-                    ),
-                    Text(
-                      'Wind speed',
-                      style: SizeConfig.smallnormalfont,
-                    ),
-                  ],
-                ),
+                // Column(
+                //   children: [
+                //     SizedBox(
+                //         height: SizeConfig.safeBlockVertical * 5,
+                //         width: SizeConfig.blockSizeHorizontal * 5,
+                //         child: Image.asset(
+                //           'images/cloud.png',
+                //           color: Colors.orangeAccent,
+                //         )),
+                //     SizedBox(
+                //       height: SizeConfig.safeBlockVertical,
+                //     ),
+                //     Text(
+                //       'SUNNY',
+                //       style: SizeConfig.smallnormalfont,
+                //     ),
+                //     Text(
+                //       'wheather',
+                //       style: SizeConfig.smallnormalfont,
+                //     ),
+                //     SizedBox(
+                //       height: SizeConfig.safeBlockVertical,
+                //     ),
+                //     Text(
+                //       '6 KM/H',
+                //       style: SizeConfig.smallnormalfont,
+                //     ),
+                //     Text(
+                //       'Wind speed',
+                //       style: SizeConfig.smallnormalfont,
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),

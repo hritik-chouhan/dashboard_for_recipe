@@ -22,6 +22,8 @@ class VISS {
     subscribe(socket, VSPath.vehicleCurrentLatitude);
     subscribe(socket, VSPath.vehicleCurrentLongitude);
     subscribe(socket, VSPath.vehicleFuelRate);
+    subscribe(socket, VSPath.vehicleInsideTemperature);
+    subscribe(socket, VSPath.vehicleAmbientAirTemperature);
   }
 
   static void update(WebSocket socket) {
@@ -55,6 +57,7 @@ class VISS {
     get(socket, VSPath.vehicleCurrentLatitude);
     get(socket, VSPath.vehicleCurrentLongitude);
     get(socket, VSPath.vehicleFuelRate);
+    get(socket, VSPath.vehicleInsideTemperature);
   }
 
   static void authorize(WebSocket socket) {
@@ -165,6 +168,14 @@ class VISS {
                   break;
                 case VSPath.vehicleFuelRate:
                   vehicleSignal.update(fuelRate: double.parse(dp["value"]));
+                  break;
+                case VSPath.vehicleInsideTemperature:
+                  vehicleSignal.update(
+                      insideTemperature: int.parse(dp["value"]));
+                  break;
+                case VSPath.vehicleAmbientAirTemperature:
+                  vehicleSignal.update(
+                      outsideTemperature: int.parse(dp["value"]));
                   break;
                 default:
                   print("$path Not Available yet!");

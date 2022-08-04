@@ -13,6 +13,8 @@ class VehicleSignal {
     required this.currentLatitude,
     required this.currentLongitude,
     required this.fuelRate,
+    required this.insideTemperature,
+    required this.outsideTemperature,
   });
 
   final double speed;
@@ -27,6 +29,8 @@ class VehicleSignal {
   final double currentLongitude;
   final double currentLatitude;
   final double fuelRate;
+  final int insideTemperature;
+  final int outsideTemperature;
 
   final bool isBatteryCharging;
 
@@ -44,6 +48,8 @@ class VehicleSignal {
     double? currentLongitude,
     double? currentLatitude,
     double? fuelRate,
+    int? insideTemperature,
+    int? outsideTemperature,
   }) {
     return VehicleSignal(
       speed: speed ?? this.speed,
@@ -61,6 +67,8 @@ class VehicleSignal {
       currentLatitude: currentLatitude ?? this.currentLatitude,
       currentLongitude: currentLongitude ?? this.currentLongitude,
       fuelRate: fuelRate ?? this.fuelRate,
+      insideTemperature: insideTemperature ?? this.insideTemperature,
+      outsideTemperature: outsideTemperature ?? this.outsideTemperature,
     );
   }
 }

@@ -22,6 +22,8 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     currentLatitude: 37.772701,
     currentLongitude: -122.416626,
     fuelRate: 21,
+    insideTemperature: 25,
+    outsideTemperature: 32,
   );
   void update({
     double? speed,
@@ -37,6 +39,8 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     double? currentLatitude,
     double? currentLongitude,
     double? fuelRate,
+    int? insideTemperature,
+    int? outsideTemperature,
   }) {
     state = state.copyWith(
       speed: speed,
@@ -52,6 +56,8 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
       currentLatitude: currentLatitude,
       currentLongitude: currentLongitude,
       fuelRate: fuelRate,
+      insideTemperature: insideTemperature,
+      outsideTemperature: outsideTemperature,
     );
   }
 }

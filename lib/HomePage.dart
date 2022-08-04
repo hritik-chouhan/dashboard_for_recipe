@@ -70,19 +70,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 isChildLockActiveLeft: vehicle.isChildLockActiveLeft,
                 isChildLockActiveRight: vehicle.isChildLockActiveRight),
           ),
-          Positioned(
-            top: SizeConfig.safeBlockVertical * 20,
-            right: SizeConfig.blockSizeHorizontal * 13,
-            bottom: SizeConfig.blockSizeVertical * 20,
-            child: SizedBox(
-              height: SizeConfig.screenHeight * 0.6,
-              width: SizeConfig.screenWidth * 0.30,
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 10),
-                child: Image.asset('images/car_img.png'),
-              ),
-            ),
-          ),
+
           Positioned(
             top: SizeConfig.safeBlockVertical * 18,
             right: SizeConfig.safeBlockHorizontal * 38,
@@ -157,6 +145,19 @@ class _HomePageState extends ConsumerState<HomePage> {
               ],
             ),
           ),
+          Positioned(
+            top: SizeConfig.safeBlockVertical * 20,
+            right: SizeConfig.blockSizeHorizontal * 13,
+            bottom: SizeConfig.blockSizeVertical * 20,
+            child: SizedBox(
+              height: SizeConfig.screenHeight * 0.6,
+              width: SizeConfig.screenWidth * 0.30,
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 10),
+                child: Image.asset('images/car_img.png'),
+              ),
+            ),
+          ),
 
           Positioned(
               top: SizeConfig.safeBlockVertical * 7,
@@ -185,7 +186,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                       ],
                     ),
                     // ignore: prefer_const_constructors
-                    weather(),
+                    weather(
+                      insideTemperatue: vehicle.insideTemperature,
+                      outsideTempearure: vehicle.outsideTemperature,
+                    ),
                     SpeedAndFuel(fuel: vehicle.fuelLevel, speed: vehicle.speed),
                   ],
                 ),
