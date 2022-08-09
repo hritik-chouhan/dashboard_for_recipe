@@ -17,12 +17,12 @@ class SpeedAndFuel extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width * 0.5,
+      width: width * 0.4,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CircularPercentIndicator(
-            radius: SizeConfig.fontsize * 2,
+            radius: SizeConfig.fontsize * 1.6,
             percent: fuel / 100,
             lineWidth: SizeConfig.fontsize / 2,
             // linearGradient: LinearGradient(colors: [Colors.redAccent,Colors.orangeAccent,Colors.lightGreenAccent,Colors.lightGreenAccent],
@@ -41,15 +41,15 @@ class SpeedAndFuel extends StatelessWidget {
             animateFromLastPercent: true,
             center: Text(
               fuel.toString() + ' %',
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
             footer: Text(
               'fuel',
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
           ),
           CircularPercentIndicator(
-            radius: SizeConfig.fontsize * 2,
+            radius: SizeConfig.fontsize * 1.6,
             percent: speed / 300,
             lineWidth: SizeConfig.fontsize / 2,
             backgroundColor: Color.fromARGB(255, 176, 213, 195),
@@ -59,11 +59,11 @@ class SpeedAndFuel extends StatelessWidget {
             animateFromLastPercent: true,
             center: Text(
               speed.toString(),
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
             footer: Text(
               'Speed in KM/H',
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
           ),
         ],
@@ -80,14 +80,14 @@ class Rpm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: SizeConfig.safeBlockVertical * 9,
-      width: SizeConfig.blockSizeHorizontal * 35,
+      width: SizeConfig.safeBlockHorizontal * 35,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
             "Engine Status",
-            style: SizeConfig.normalfont,
+            style: SizeConfig.smallnormalfont,
           ),
           LinearPercentIndicator(
             backgroundColor: Colors.white70,
@@ -100,11 +100,11 @@ class Rpm extends StatelessWidget {
             barRadius: Radius.circular(15),
             leading: Text(
               'RPM',
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
             trailing: Text(
               rpm.toString(),
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             ),
           ),
         ],

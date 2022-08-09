@@ -43,12 +43,12 @@ class date_time extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(calendar[now.month] + "  " + now.day.toString(),
-            style: SizeConfig.normalfont),
+            style: SizeConfig.smallnormalfont),
         Text(
           now.hour > 12
               ? _hour + ':' + _minute + ' PM'
               : _hour + ':' + _minute + ' AM',
-          style: SizeConfig.normalfont,
+          style: SizeConfig.smallnormalfont,
         ),
       ],
     );
@@ -82,7 +82,7 @@ class CurrentLocation extends StatelessWidget {
               data['features'].length == 0
                   ? 'No location defined'
                   : data['features'][0]['place_name'],
-              style: SizeConfig.normalfont,
+              style: SizeConfig.smallnormalfont,
             );
           }
         }

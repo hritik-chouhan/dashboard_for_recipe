@@ -31,7 +31,7 @@ class weather extends StatelessWidget {
               flex: 1,
               child: Text(
                 'Weather',
-                style: SizeConfig.normalfont,
+                style: SizeConfig.smallnormalfont,
                 textAlign: TextAlign.left,
               )),
           Flexible(
