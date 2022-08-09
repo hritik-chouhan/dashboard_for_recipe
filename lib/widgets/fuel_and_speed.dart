@@ -17,12 +17,12 @@ class SpeedAndFuel extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width * 0.4,
+      width: width * 0.5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CircularPercentIndicator(
-            radius: SizeConfig.fontsize * 1.6,
+            radius: SizeConfig.fontsize * 2,
             percent: fuel / 100,
             lineWidth: SizeConfig.fontsize / 2,
             // linearGradient: LinearGradient(colors: [Colors.redAccent,Colors.orangeAccent,Colors.lightGreenAccent,Colors.lightGreenAccent],
@@ -41,29 +41,29 @@ class SpeedAndFuel extends StatelessWidget {
             animateFromLastPercent: true,
             center: Text(
               fuel.toString() + ' %',
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.normalfont,
             ),
             footer: Text(
               'fuel',
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.normalfont,
             ),
           ),
           CircularPercentIndicator(
-            radius: SizeConfig.fontsize * 1.6,
+            radius: SizeConfig.fontsize * 2,
             percent: speed / 300,
             lineWidth: SizeConfig.fontsize / 2,
-            backgroundColor: Colors.purpleAccent.shade100,
-            progressColor: Colors.purple,
+            backgroundColor: Color.fromARGB(255, 176, 213, 195),
+            progressColor: Colors.lightBlueAccent,
             animation: true,
             circularStrokeCap: CircularStrokeCap.round,
             animateFromLastPercent: true,
             center: Text(
               speed.toString(),
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.normalfont,
             ),
             footer: Text(
               'Speed in KM/H',
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.normalfont,
             ),
           ),
         ],
@@ -79,14 +79,15 @@ class Rpm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: SizeConfig.safeBlockVertical * 10,
+      height: SizeConfig.safeBlockVertical * 9,
       width: SizeConfig.blockSizeHorizontal * 35,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
             "Engine Status",
-            style: SizeConfig.smallnormalfont,
+            style: SizeConfig.normalfont,
           ),
           LinearPercentIndicator(
             backgroundColor: Colors.white70,
@@ -103,7 +104,7 @@ class Rpm extends StatelessWidget {
             ),
             trailing: Text(
               rpm.toString(),
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.normalfont,
             ),
           ),
         ],

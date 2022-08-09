@@ -21,88 +21,60 @@ class weather extends StatelessWidget {
         borderRadius: BorderRadius.circular(SizeConfig.safeBlockVertical * 2),
         color: Colors.black38,
       ),
-      height: SizeConfig.safeBlockVertical * 30,
+      height: SizeConfig.safeBlockVertical * 20,
       width: SizeConfig.blockSizeHorizontal * 20,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(
               flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Weather',
-                  style: SizeConfig.normalfont,
-                  textAlign: TextAlign.left,
-                ),
+              child: Text(
+                'Weather',
+                style: SizeConfig.normalfont,
+                textAlign: TextAlign.left,
               )),
           Flexible(
             flex: 3,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
+                SizedBox(
+                    height: SizeConfig.safeBlockVertical * 5,
+                    width: SizeConfig.blockSizeHorizontal * 5,
+                    child: Image.asset(
+                      'images/thermostate.png',
+                      color: Colors.orangeAccent,
+                    )),
+                SizedBox(
+                  height: SizeConfig.safeBlockVertical,
+                ),
+                Row(
                   children: [
+                    Column(
+                      children: [
+                        Text(insideTemperatue.toString() + ' \u00B0',
+                            style: SizeConfig.normalfont),
+                        Text('Inside Car', style: SizeConfig.smallnormalfont),
+                      ],
+                    ),
                     SizedBox(
-                        height: SizeConfig.safeBlockVertical * 5,
-                        width: SizeConfig.blockSizeHorizontal * 5,
-                        child: Image.asset(
-                          'images/thermostate.png',
-                          color: Colors.orangeAccent,
-                        )),
-                    SizedBox(
-                      height: SizeConfig.safeBlockVertical,
+                      width: SizeConfig.safeBlockHorizontal,
                     ),
-                    Text(insideTemperatue.toString() + ' \u00B0',
-                        style: SizeConfig.smallnormalfont),
-                    Text('Inside Car', style: SizeConfig.smallnormalfont),
-                    SizedBox(
-                      height: SizeConfig.safeBlockVertical,
-                    ),
-                    Text(
-                      outsideTempearure.toString() + ' \u00B0',
-                      style: SizeConfig.smallnormalfont,
-                    ),
-                    Text(
-                      'Outside car',
-                      style: SizeConfig.smallnormalfont,
-                    ),
+                    Column(
+                      children: [
+                        Text(
+                          outsideTempearure.toString() + ' \u00B0',
+                          style: SizeConfig.normalfont,
+                        ),
+                        Text(
+                          'Outside car',
+                          style: SizeConfig.smallnormalfont,
+                        ),
+                      ],
+                    )
                   ],
                 ),
-                // Column(
-                //   children: [
-                //     SizedBox(
-                //         height: SizeConfig.safeBlockVertical * 5,
-                //         width: SizeConfig.blockSizeHorizontal * 5,
-                //         child: Image.asset(
-                //           'images/cloud.png',
-                //           color: Colors.orangeAccent,
-                //         )),
-                //     SizedBox(
-                //       height: SizeConfig.safeBlockVertical,
-                //     ),
-                //     Text(
-                //       'SUNNY',
-                //       style: SizeConfig.smallnormalfont,
-                //     ),
-                //     Text(
-                //       'wheather',
-                //       style: SizeConfig.smallnormalfont,
-                //     ),
-                //     SizedBox(
-                //       height: SizeConfig.safeBlockVertical,
-                //     ),
-                //     Text(
-                //       '6 KM/H',
-                //       style: SizeConfig.smallnormalfont,
-                //     ),
-                //     Text(
-                //       'Wind speed',
-                //       style: SizeConfig.smallnormalfont,
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ),

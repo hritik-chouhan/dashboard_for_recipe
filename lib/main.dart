@@ -24,8 +24,10 @@ Future<void> main() async {
   print('hello');
 
   runApp(
+    
     ProviderScope(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: InitialScreen(client: client),
       ),
     ),

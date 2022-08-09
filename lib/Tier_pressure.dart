@@ -7,7 +7,14 @@ import 'font.dart';
 class TierPressure extends StatefulWidget {
   String tname;
   double tpress;
-  TierPressure({Key? key, required this.tname, required this.tpress})
+  CrossAxisAlignment crossAxisAlignment;
+  MainAxisAlignment mainAxisAlignment;
+  TierPressure(
+      {Key? key,
+      required this.tname,
+      required this.tpress,
+      required this.crossAxisAlignment,
+      required this.mainAxisAlignment})
       : super(key: key);
 
   @override
@@ -19,19 +26,21 @@ class _TierPressureState extends State<TierPressure> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: SizeConfig.safeBlockVertical * 12,
-      width: SizeConfig.safeBlockHorizontal * 12,
+      width: SizeConfig.safeBlockHorizontal * 14,
       child: Column(
+        mainAxisAlignment: widget.mainAxisAlignment,
+        // crossAxisAlignment: widget.crossAxisAlignment,
         children: [
           Text(
             '${widget.tname}',
-            style: SizeConfig.smallnormalfont,
+            style: SizeConfig.normalfont,
           ),
           Text(
             widget.tpress.toString() + ' PSI',
-            style: SizeConfig.smallnormalfont,
+            style: SizeConfig.normalfont,
           ),
           LinearPercentIndicator(
-            width: SizeConfig.safeBlockHorizontal * 10,
+            width: SizeConfig.safeBlockHorizontal * 11,
             // fillColor: Colors.green,
             // linearGradient: LinearGradient(
             //   colors: [Colors.red,Colors.orangeAccent, Colors.green],

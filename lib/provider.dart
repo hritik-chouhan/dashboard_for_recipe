@@ -30,7 +30,7 @@ final DateTimeProvider = StateNotifierProvider<datetime,DateTime>((ref) =>
 class datetime extends StateNotifier<DateTime>{
   datetime() : super(DateTime.now()){
 
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    Timer.periodic(Duration(seconds: 30), (timer) {
       DateTime _now = DateTime.now();
       update(_now);
     });
