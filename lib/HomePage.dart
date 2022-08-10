@@ -278,7 +278,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                     children: [
                                       Text(
                                         'Avg. Fuel Consumtion',
-                                        style: SizeConfig.smallnormalfont,
+                                        style: SizeConfig.smallnormalfont2,
                                       ),
                                       Text(
                                         vehicle.fuelRate.toString() +

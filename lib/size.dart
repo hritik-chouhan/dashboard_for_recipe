@@ -14,6 +14,7 @@ class SizeConfig {
   static late double fontsize;
   static late TextStyle normalfont;
   static late TextStyle smallnormalfont;
+  static late TextStyle smallnormalfont2;
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
@@ -27,7 +28,7 @@ class SizeConfig {
         _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
     safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
-    fontsize = screenHeight * screenWidth * 0.01 * 0.01 * 0.4;
+    fontsize = screenHeight * screenWidth * 0.01 * 0.01 * 0.3;
     print(fontsize);
     normalfont = TextStyle(
       fontSize: fontsize * 0.8,
@@ -37,6 +38,10 @@ class SizeConfig {
     smallnormalfont = TextStyle(
       fontSize: fontsize / 2,
       fontWeight: FontWeight.w700,
+      color: Colors.white,
+    );
+    smallnormalfont2 = TextStyle(
+      fontSize: fontsize * 0.4,
       color: Colors.white,
     );
   }

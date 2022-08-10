@@ -33,7 +33,7 @@ class _TierPressureState extends State<TierPressure> {
         children: [
           Text(
             '${widget.tname}',
-            style: SizeConfig.smallnormalfont,
+            style: SizeConfig.smallnormalfont2,
           ),
           Text(
             widget.tpress.toString() + ' PSI',

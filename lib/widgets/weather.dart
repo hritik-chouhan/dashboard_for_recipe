@@ -19,7 +19,6 @@ class weather extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(SizeConfig.safeBlockVertical * 2),
-        color: Colors.black38,
       ),
       height: SizeConfig.safeBlockVertical * 20,
       width: SizeConfig.blockSizeHorizontal * 20,
@@ -55,7 +54,7 @@ class weather extends StatelessWidget {
                       children: [
                         Text(insideTemperatue.toString() + ' \u00B0',
                             style: SizeConfig.normalfont),
-                        Text('Inside Car', style: SizeConfig.smallnormalfont),
+                        Text('Inside', style: SizeConfig.smallnormalfont2),
                       ],
                     ),
                     SizedBox(
@@ -68,8 +67,8 @@ class weather extends StatelessWidget {
                           style: SizeConfig.normalfont,
                         ),
                         Text(
-                          'Outside car',
-                          style: SizeConfig.smallnormalfont,
+                          'Outside',
+                          style: SizeConfig.smallnormalfont2,
                         ),
                       ],
                     )

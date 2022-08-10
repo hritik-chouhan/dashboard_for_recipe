@@ -82,7 +82,7 @@ class CurrentLocation extends StatelessWidget {
               data['features'].length == 0
                   ? 'No location defined'
                   : data['features'][0]['place_name'],
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.smallnormalfont2,
             );
           }
         }

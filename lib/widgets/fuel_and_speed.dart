@@ -45,7 +45,7 @@ class SpeedAndFuel extends StatelessWidget {
             ),
             footer: Text(
               'fuel',
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.smallnormalfont2,
             ),
           ),
           CircularPercentIndicator(
@@ -63,7 +63,7 @@ class SpeedAndFuel extends StatelessWidget {
             ),
             footer: Text(
               'Speed in KM/H',
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.smallnormalfont2,
             ),
           ),
         ],
@@ -87,7 +87,7 @@ class Rpm extends StatelessWidget {
         children: [
           Text(
             "Engine Status",
-            style: SizeConfig.smallnormalfont,
+            style: SizeConfig.smallnormalfont2,
           ),
           LinearPercentIndicator(
             backgroundColor: Colors.white70,
@@ -104,7 +104,7 @@ class Rpm extends StatelessWidget {
             ),
             trailing: Text(
               rpm.toString(),
-              style: SizeConfig.smallnormalfont,
+              style: SizeConfig.smallnormalfont2,
             ),
           ),
         ],

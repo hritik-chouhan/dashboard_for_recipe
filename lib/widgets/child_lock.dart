@@ -20,16 +20,12 @@ class ChildLockStatus extends StatelessWidget {
               Text(
                 "Child Lock",
                 style: TextStyle(
-                    fontSize: SizeConfig.fontsize / 2,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
+                    fontSize: SizeConfig.fontsize / 3, color: Colors.green),
               ),
               Text(
                 "Activated",
                 style: TextStyle(
-                    fontSize: SizeConfig.fontsize / 2,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
+                    fontSize: SizeConfig.fontsize / 3, color: Colors.green),
               ),
               SizedBox(
                 width: SizeConfig.safeBlockVertical / 2,
@@ -46,8 +42,7 @@ class ChildLockStatus extends StatelessWidget {
               Text(
                 'No child  Lock',
                 style: TextStyle(
-                  fontSize: SizeConfig.fontsize / 3,
-                  fontWeight: FontWeight.bold,
+                  fontSize: SizeConfig.fontsize / 2,
                   color: Colors.redAccent,
                 ),
               ),
