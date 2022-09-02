@@ -260,38 +260,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            height: SizeConfig.safeBlockVertical,
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Flexible(
-                                  flex: 1,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Avg. Fuel Consumtion',
-                                        style: SizeConfig.smallnormalfont2,
-                                      ),
-                                      Text(
-                                        vehicle.fuelRate.toString() +
-                                            ' KM/Litre',
-                                        style: SizeConfig.smallnormalfont,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Flexible(flex: 1, child: Rpm(rpm: vehicle.rpm)),
-                              ],
-                            ),
-                          ),
+
                           SizedBox(
                             height: SizeConfig.safeBlockVertical,
                           ),
@@ -324,9 +293,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                           Flexible(
                             flex: 5,
                             child: Container(
+
+
                               // color: Colors.red,
                               height: SizeConfig.screenHeight * 0.6,
-                              width: SizeConfig.screenWidth * 0.6,
+                              width: SizeConfig.screenWidth * 0.53,
                               child: Stack(
                                 children: [
                                   Positioned(
@@ -339,7 +310,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         TierPressure(
-                                          tname: 'L Front Tier',
+                                          tname: 'L Front Tire',
                                           tpress: vehicle.frontLeftTP,
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
@@ -384,7 +355,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           ),
                                         ),
                                         TierPressure(
-                                          tname: 'L Rear Tier',
+                                          tname: 'L Rear Tire',
                                           tpress: vehicle.rearLeftTP,
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -419,7 +390,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                     child: Column(
                                       children: [
                                         TierPressure(
-                                          tname: 'R Front Tier',
+                                          tname: 'R Front Tire',
                                           tpress: vehicle.frontRightTP,
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
@@ -464,7 +435,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           ),
                                         ),
                                         TierPressure(
-                                          tname: 'R Rear Tier',
+                                          tname: 'R Rear Tire',
                                           tpress: vehicle.rearRightTP,
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -476,6 +447,38 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   ),
                                 ],
                               ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: SizeConfig.safeBlockVertical,
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Flexible(
+                                  flex: 1,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Avg. Fuel Consumtion',
+                                        style: SizeConfig.smallnormalfont2,
+                                      ),
+                                      Text(
+                                        vehicle.fuelRate.toString() +
+                                            ' KM/Litre',
+                                        style: SizeConfig.smallnormalfont,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Flexible(flex: 1, child: Rpm(rpm: vehicle.rpm)),
+                              ],
                             ),
                           ),
                           // Flexible(
