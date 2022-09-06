@@ -10,12 +10,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlng/latlng.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import 'Kuksa-server/vehicle_config.dart';
+
+
 import 'Kuksa-server/vehicle_provider.dart';
-import 'font.dart';
+
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,8 +32,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
     DateTime _now = ref.watch(DateTimeProvider);
 
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+
 
     return Scaffold(
         backgroundColor: Colors.black87,
@@ -60,19 +58,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       right: SizeConfig.safeBlockHorizontal * 2,
                       child: date_time(now: _now)),
 
-                  // Positioned(
-                  //     top: 390,
-                  //     right: 350,
-                  //     child: RotatedBox(
-                  //       quarterTurns: 2,
-                  //       child: Container(
-                  //         height: 50,
-                  //         width: 100,
-                  //         child: CustomPaint(
-                  //           painter: simplearrow(),
-                  //         ),
-                  //       ),
-                  //     )),
+
 
                   Positioned(
                     right: SizeConfig.safeBlockHorizontal * 41,
@@ -86,7 +72,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     top: SizeConfig.safeBlockVertical * 18,
                     right: SizeConfig.safeBlockHorizontal * 38,
                     child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.end,
+
                       children: [
                         TierPressure(
                           tname: 'L Front Tier',
@@ -108,7 +94,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     top: SizeConfig.safeBlockVertical * 65,
                     right: SizeConfig.safeBlockHorizontal * 38,
                     child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.end,
+
                       children: [
                         RotatedBox(
                           quarterTurns: 2,
@@ -242,8 +228,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                           SizeConfig.safeBlockVertical * 2,
                           SizeConfig.safeBlockHorizontal * 2,
                           0),
-                      // padding:
-                      //     EdgeInsets.all(SizeConfig.safeBlockHorizontal * 2),
+
                       child: Column(
                         children: [
                           Flexible(flex: 1, child: date_time(now: _now)),
@@ -371,10 +356,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                     left: SizeConfig.safeBlockHorizontal * 12,
                                     right: SizeConfig.safeBlockHorizontal * 12,
                                     child: SizedBox(
-                                      // height:
-                                      //     SizeConfig.screenHeight * 0.40,
-                                      // width:
-                                      //     SizeConfig.screenWidth * 0.50,
+
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 10),
                                         child: Image.asset(
@@ -481,404 +463,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                               ],
                             ),
                           ),
-                          // Flexible(
-                          //   fit: FlexFit.tight,
-                          //   flex: 5,
-                          //   child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.center,
-                          //     children: [
-                          //       Flexible(
-                          //         flex: 1,
-                          //         child: Column(
-                          //           mainAxisAlignment:
-                          //               MainAxisAlignment.spaceBetween,
-                          //           crossAxisAlignment: CrossAxisAlignment.end,
-                          //           children: [
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Column(
-                          //                 mainAxisAlignment:
-                          //                     MainAxisAlignment.center,
-                          //                 crossAxisAlignment:
-                          //                     CrossAxisAlignment.end,
-                          //                 children: [
-                          //                   TierPressure(
-                          //                     tname: 'L Front Tier',
-                          //                     tpress: vehicle.frontLeftTP,
-                          //                     mainAxisAlignment:
-                          //                         MainAxisAlignment.end,
-                          //                     crossAxisAlignment:
-                          //                         CrossAxisAlignment.end,
-                          //                   ),
-                          //                   Container(
-                          //                     height:
-                          //                         SizeConfig.safeBlockVertical *
-                          //                             6,
-                          //                     width: SizeConfig
-                          //                             .safeBlockHorizontal *
-                          //                         12,
-                          //                     child: CustomPaint(
-                          //                       painter: Arrowpaint2(),
-                          //                     ),
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 2,
-                          //               child: SizedBox(
-                          //                 height:
-                          //                     SizeConfig.safeBlockVertical * 6,
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Row(
-                          //                 mainAxisAlignment:
-                          //                     MainAxisAlignment.end,
-                          //                 children: [
-                          //                   ChildLockStatus(
-                          //                       isChildLockActiveLeft: vehicle
-                          //                           .isChildLockActiveLeft,
-                          //                       isChildLockActiveRight: vehicle
-                          //                           .isChildLockActiveRight),
-                          //                   RotatedBox(
-                          //                     quarterTurns: 2,
-                          //                     child: Container(
-                          //                       height: SizeConfig
-                          //                               .safeBlockVertical *
-                          //                           2,
-                          //                       width: SizeConfig
-                          //                               .blockSizeHorizontal *
-                          //                           7,
-                          //                       child: CustomPaint(
-                          //                         painter: simplearrow(),
-                          //                       ),
-                          //                     ),
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Column(
-                          //                 children: [
-                          //                   RotatedBox(
-                          //                     quarterTurns: 2,
-                          //                     child: Container(
-                          //                       height: SizeConfig
-                          //                               .safeBlockVertical *
-                          //                           6,
-                          //                       width: SizeConfig
-                          //                               .safeBlockHorizontal *
-                          //                           12,
-                          //                       child: CustomPaint(
-                          //                         painter: Arrowpaint(),
-                          //                       ),
-                          //                     ),
-                          //                   ),
-                          //                   TierPressure(
-                          //                     tname: 'L Rear Tier',
-                          //                     tpress: vehicle.rearLeftTP,
-                          //                     mainAxisAlignment:
-                          //                         MainAxisAlignment.start,
-                          //                     crossAxisAlignment:
-                          //                         CrossAxisAlignment.end,
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //           ],
-                          //         ),
-                          //       ),
-                          //       Flexible(
-                          //         flex: 1,
-                          //         fit: FlexFit.tight,
-                          //         child: Container(
-                          //           child: Column(
-                          //             children: [
-                          //               SizedBox(
-                          //                 height:
-                          //                     SizeConfig.safeBlockVertical * 5,
-                          //               ),
-                          //               SizedBox(
-                          //                 // height:
-                          //                 //     SizeConfig.screenHeight * 0.40,
-                          //                 // width:
-                          //                 //     SizeConfig.screenWidth * 0.50,
-                          //                 child: AnimatedContainer(
-                          //                   duration:
-                          //                       Duration(milliseconds: 10),
-                          //                   child: Image.asset(
-                          //                     'images/car_img.png',
-                          //                     fit: BoxFit.fill,
-                          //                   ),
-                          //                 ),
-                          //               ),
-                          //               SizedBox(
-                          //                 height:
-                          //                     SizeConfig.safeBlockVertical * 5,
-                          //               ),
-                          //             ],
-                          //           ),
-                          //         ),
-                          //       ),
-                          //       Flexible(
-                          //         flex: 1,
-                          //         child: Column(
-                          //           crossAxisAlignment:
-                          //               CrossAxisAlignment.start,
-                          //           mainAxisAlignment:
-                          //               MainAxisAlignment.spaceBetween,
-                          //           children: [
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Column(
-                          //                 children: [
-                          //                   TierPressure(
-                          //                     tname: 'R Front Tier',
-                          //                     tpress: vehicle.frontRightTP,
-                          //                     mainAxisAlignment:
-                          //                         MainAxisAlignment.end,
-                          //                     crossAxisAlignment:
-                          //                         CrossAxisAlignment.start,
-                          //                   ),
-                          //                   Container(
-                          //                     height:
-                          //                         SizeConfig.safeBlockVertical *
-                          //                             6,
-                          //                     width: SizeConfig
-                          //                             .safeBlockHorizontal *
-                          //                         12,
-                          //                     child: CustomPaint(
-                          //                       painter: Arrowpaint(),
-                          //                     ),
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: SizedBox(
-                          //                 height:
-                          //                     SizeConfig.safeBlockVertical * 5,
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Row(
-                          //                 mainAxisAlignment:
-                          //                     MainAxisAlignment.start,
-                          //                 children: [
-                          //                   Container(
-                          //                     height:
-                          //                         SizeConfig.safeBlockVertical *
-                          //                             2,
-                          //                     width: SizeConfig
-                          //                             .blockSizeHorizontal *
-                          //                         7,
-                          //                     child: CustomPaint(
-                          //                       painter: simplearrow(),
-                          //                     ),
-                          //                   ),
-                          //                   ChildLockStatus(
-                          //                       isChildLockActiveLeft: vehicle
-                          //                           .isChildLockActiveLeft,
-                          //                       isChildLockActiveRight: vehicle
-                          //                           .isChildLockActiveRight),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Column(
-                          //                 children: [
-                          //                   RotatedBox(
-                          //                     quarterTurns: 2,
-                          //                     child: Container(
-                          //                       height: SizeConfig
-                          //                               .safeBlockVertical *
-                          //                           6,
-                          //                       width: SizeConfig
-                          //                               .safeBlockHorizontal *
-                          //                           12,
-                          //                       child: CustomPaint(
-                          //                         painter: Arrowpaint2(),
-                          //                       ),
-                          //                     ),
-                          //                   ),
-                          //                   TierPressure(
-                          //                     tname: 'R Rear Tier',
-                          //                     tpress: vehicle.rearRightTP,
-                          //                     mainAxisAlignment:
-                          //                         MainAxisAlignment.start,
-                          //                     crossAxisAlignment:
-                          //                         CrossAxisAlignment.start,
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //             ),
-                          //           ],
-                          //         ),
-                          //       )
-                          //     ],
-                          //   ),
-                          // ),
+
                         ],
                       ),
                     ),
                   )
                 ],
               );
-              // return Column(
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     Flexible(flex: 1, child: date_time(now: _now)),
-              //     Flexible(flex: 1, child: CurrentLocation(pos: pos)),
-              //     Flexible(
-              //       flex: 2,
-              //       child: Row(
-              //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //         children: [
-              //           Column(
-              //             crossAxisAlignment: CrossAxisAlignment.start,
-              //             children: [
-              //               Text(
-              //                 'Avg. Fuel Consumtion',
-              //                 style: SizeConfig.smallnormalfont,
-              //               ),
-              //               Text(
-              //                 vehicle.fuelRate.toString() + ' KM/Litre',
-              //                 style: SizeConfig.smallnormalfont,
-              //               ),
-              //             ],
-              //           ),
-              //           Rpm(rpm: vehicle.rpm),
-              //         ],
-              //       ),
-              //     ),
-              //     Flexible(
-              //       flex: 2,
-              //       child: Row(
-              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //         children: [
-              //           weather(
-              //             insideTemperatue: vehicle.insideTemperature,
-              //             outsideTempearure: vehicle.outsideTemperature,
-              //           ),
-              //           SpeedAndFuel(
-              //               fuel: vehicle.fuelLevel, speed: vehicle.speed),
-              //         ],
-              //       ),
-              //     ),
-              //     Flexible(
-              //       flex: 5,
-              //       child: Container(
-              //         color: Colors.red,
-              //         child: Row(
-              //           children: [
-              //             Flexible(
-              //               flex: 1,
-              //               child: Column(
-              //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //                 crossAxisAlignment: CrossAxisAlignment.end,
-              //                 children: [
-              //                   Column(
-              //                     children: [
-              //                       TierPressure(
-              //                           tname: 'L Front Tier',
-              //                           tpress: vehicle.frontLeftTP),
-              //                       Container(
-              //                         height: SizeConfig.safeBlockVertical * 10,
-              //                         width:
-              //                             SizeConfig.safeBlockHorizontal * 12,
-              //                         child: CustomPaint(
-              //                           painter: Arrowpaint2(),
-              //                         ),
-              //                       ),
-              //                     ],
-              //                   ),
-              //                   Column(
-              //                     children: [
-              //                       RotatedBox(
-              //                         quarterTurns: 2,
-              //                         child: Container(
-              //                           height:
-              //                               SizeConfig.safeBlockVertical * 10,
-              //                           width:
-              //                               SizeConfig.safeBlockHorizontal * 12,
-              //                           child: CustomPaint(
-              //                             painter: Arrowpaint(),
-              //                           ),
-              //                         ),
-              //                       ),
-              //                       TierPressure(
-              //                           tname: 'L Rear Tier',
-              //                           tpress: vehicle.rearLeftTP),
-              //                     ],
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //             Flexible(
-              //               flex: 1,
-              //               child: SizedBox(
-              //                 height: SizeConfig.screenHeight * 0.20,
-              //                 child: AnimatedContainer(
-              //                   duration: Duration(milliseconds: 10),
-              //                   child: Image.asset('images/car_img.png'),
-              //                 ),
-              //               ),
-              //             ),
-              //             Flexible(
-              //               flex: 1,
-              //               child: Column(
-              //                 crossAxisAlignment: CrossAxisAlignment.start,
-              //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //                 children: [
-              //                   Column(
-              //                     children: [
-              //                       TierPressure(
-              //                           tname: 'R Front Tier',
-              //                           tpress: vehicle.frontRightTP),
-              //                       Container(
-              //                         height: SizeConfig.safeBlockVertical * 10,
-              //                         width:
-              //                             SizeConfig.safeBlockHorizontal * 12,
-              //                         child: CustomPaint(
-              //                           painter: Arrowpaint(),
-              //                         ),
-              //                       ),
-              //                     ],
-              //                   ),
-              //                   Column(
-              //                     children: [
-              //                       RotatedBox(
-              //                         quarterTurns: 2,
-              //                         child: Container(
-              //                           height:
-              //                               SizeConfig.safeBlockVertical * 6,
-              //                           width:
-              //                               SizeConfig.safeBlockHorizontal * 14,
-              //                           child: CustomPaint(
-              //                             painter: Arrowpaint2(),
-              //                           ),
-              //                         ),
-              //                       ),
-              //                       TierPressure(
-              //                           tname: 'R Rear Tier',
-              //                           tpress: vehicle.rearRightTP),
-              //                     ],
-              //                   ),
-              //                 ],
-              //               ),
-              //             )
-              //           ],
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // );
+
             }
           },
         ));

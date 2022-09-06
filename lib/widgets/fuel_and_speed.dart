@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../font.dart';
+
 
 class SpeedAndFuel extends StatelessWidget {
   double fuel;
@@ -25,11 +25,7 @@ class SpeedAndFuel extends StatelessWidget {
             radius: SizeConfig.fontsize * 1.6,
             percent: fuel / 100,
             lineWidth: SizeConfig.fontsize / 2,
-            // linearGradient: LinearGradient(colors: [Colors.redAccent,Colors.orangeAccent,Colors.lightGreenAccent,Colors.lightGreenAccent],
-            // stops: [0.1,0.3,0.6,1],
-            //   begin: Alignment(1,0),
-            //   end: Alignment(0,1),
-            // ),
+
             backgroundColor: Colors.lightBlue.shade100,
             progressColor: fuel < 25
                 ? Colors.redAccent

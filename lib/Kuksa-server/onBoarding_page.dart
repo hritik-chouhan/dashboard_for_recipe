@@ -20,8 +20,7 @@ class OnBoardingPage extends ConsumerStatefulWidget {
 
 class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
   late Timer _timer;
-  // static const int open = 1;
-  // static const int closed = 3;
+
 
   @override
   void initState() {
@@ -29,7 +28,7 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
     super.initState();
     VISS.init(widget.socket);
     _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      // print(widget.socket.readyState);
+
       if (widget.socket.readyState == 3) {
         ref.refresh(sockConnectprovider(widget.client));
       }
@@ -38,7 +37,7 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
       widget.socket.listen(
             (data) {
           VISS.parseData(ref, data);
-          // print(data);
+
         },
         onError: (e, stk) {
           print(e.toString());

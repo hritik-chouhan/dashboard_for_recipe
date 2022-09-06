@@ -1,4 +1,4 @@
-import 'package:dashboard_app/font.dart';
+
 import 'package:dashboard_app/size.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

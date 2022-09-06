@@ -1,4 +1,4 @@
-import 'package:dashboard_app/font.dart';
+
 import 'package:flutter/material.dart';
 import 'package:latlng/latlng.dart';
 
@@ -25,8 +25,7 @@ class date_time extends StatelessWidget {
       11: 'Nov',
       12: 'Dec'
     };
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+
 
     int hour = now.hour > 12 ? now.hour - 12 : now.hour;
     String _hour =
@@ -35,9 +34,7 @@ class date_time extends StatelessWidget {
     String _minute = minute.toString().length == 1
         ? '0' + minute.toString()
         : minute.toString();
-    // top: SizeConfig.safeBlockVertical * 2,
-    // left: SizeConfig.safeBlockHorizontal * 2,
-    // right: SizeConfig.safeBlockHorizontal * 2,
+
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

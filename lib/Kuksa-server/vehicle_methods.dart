@@ -29,25 +29,8 @@ class VISS {
   static void update(WebSocket socket) {
     get(socket, VSPath.vehicleSpeed);
     get(socket, VSPath.vehicleEngineRPM);
-    get(socket, VSPath.vehicleLeftIndicator);
-    get(socket, VSPath.vehicleRightIndicator);
     get(socket, VSPath.vehicleFuelLevel);
-    get(socket, VSPath.vehicleCoolantTemp);
-    get(socket, VSPath.vehicleHazardLightOn);
-    get(socket, VSPath.vehicleHighBeamOn);
-    get(socket, VSPath.vehicleLowBeamOn);
-    get(socket, VSPath.vehicleSelectedGear);
-    get(socket, VSPath.vehiclePerformanceMode);
     get(socket, VSPath.vehicleAmbientAirTemperature);
-    get(socket, VSPath.vehicleParkingLightOn);
-    get(socket, VSPath.vehicleTrunkLocked);
-    get(socket, VSPath.vehicleTrunkOpen);
-    get(socket, VSPath.vehicleAmbientAirTemperature);
-    get(socket, VSPath.vehicleMIL);
-    get(socket, VSPath.vehicleCruiseControlError);
-    get(socket, VSPath.vehicleCruiseControlSpeedSet);
-    get(socket, VSPath.vehicleCruiseControlSpeedisActive);
-    get(socket, VSPath.vehicleBatteryChargingStatus);
     get(socket, VSPath.vehicleFrontLeftTier);
     get(socket, VSPath.vehicleFrontRightTier);
     get(socket, VSPath.vehicleRearLeftTier);
@@ -149,9 +132,7 @@ class VISS {
                   vehicleSignal.update(rearRightTP: double.parse(dp["value"]));
                   break;
 
-                case VSPath.vehicleBatteryChargingStatus:
-                  vehicleSignal.update(isBatteryCharging: dp['value']);
-                  break;
+
                 case VSPath.vehicleIsChildLockActiveLeft:
                   vehicleSignal.update(isChildLockActiveLeft: dp['value']);
                   break;
