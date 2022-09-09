@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 import 'package:dashboard_app/Tier_pressure.dart';
 import 'package:dashboard_app/drawArrow.dart';
 import 'package:dashboard_app/provider.dart';
