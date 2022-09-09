@@ -1,16 +1,17 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlng/latlng.dart';
 
 import '../Kuksa-server/vehicle_config.dart';
 import '../size.dart';
 
-class date_time extends StatelessWidget {
+class date_time extends ConsumerWidget {
   DateTime now;
   date_time({Key? key, required this.now}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
     Map calendar = {
       1: 'jan',
       2: 'Feb',
@@ -52,14 +53,14 @@ class date_time extends StatelessWidget {
   }
 }
 
-class CurrentLocation extends StatelessWidget {
+class CurrentLocation extends ConsumerWidget {
   LatLng pos;
   CurrentLocation({Key? key, required this.pos}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,ref) {
     return FutureBuilder(
-      future: getAdress(pos),
+      future: getAdress(pos,ref),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           // If we got an error

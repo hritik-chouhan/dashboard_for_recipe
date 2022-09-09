@@ -12,13 +12,10 @@ class InitialScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    print('intial screen');
     final sockConnect = ref.watch(sockConnectprovider(client));
-    print('is2');
 
     return sockConnect.when(
       data: (socket) {
-        print('data');
         this.socket = socket;
         this.socket.pingInterval = const Duration(seconds: 2);
         return OnBoardingPage(client: client, socket: this.socket);

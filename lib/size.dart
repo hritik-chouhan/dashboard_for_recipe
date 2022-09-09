@@ -29,7 +29,6 @@ class SizeConfig {
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
     safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
     fontsize = screenHeight * screenWidth * 0.01 * 0.01 * 0.3;
-    print(fontsize);
     normalfont = TextStyle(
       fontSize: fontsize * 0.8,
       fontWeight: FontWeight.w700,

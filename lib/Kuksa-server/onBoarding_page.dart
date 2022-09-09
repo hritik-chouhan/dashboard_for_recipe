@@ -24,9 +24,8 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
 
   @override
   void initState() {
-    print('onboarding');
     super.initState();
-    VISS.init(widget.socket);
+    VISS.init(widget.socket,ref);
     _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
 
       if (widget.socket.readyState == 3) {
