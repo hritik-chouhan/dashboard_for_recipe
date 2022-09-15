@@ -1,11 +1,8 @@
-// SPDX-License-Identifier: Apache-2.0
-
 import 'package:dashboard_app/Tier_pressure.dart';
 import 'package:dashboard_app/drawArrow.dart';
 import 'package:dashboard_app/provider.dart';
 import 'package:dashboard_app/size.dart';
 import 'package:dashboard_app/widgets/child_lock.dart';
-import 'package:dashboard_app/widgets/date_time_location.dart';
 import 'package:dashboard_app/widgets/fuel_and_speed.dart';
 import 'package:dashboard_app/widgets/weather.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,7 +27,9 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     final vehicle = ref.watch(vehicleSignalProvider);
+    LatLng pos = LatLng(vehicle.currentLatitude, vehicle.currentLongitude);
 
+    DateTime _now = ref.watch(DateTimeProvider);
 
 
 
@@ -48,15 +47,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       color: Colors.black87,
                     ),
                   ),
-                  // Positioned(
-                  //     top: SizeConfig.safeBlockVertical * 8,
-                  //     right: SizeConfig.safeBlockHorizontal * 3,
-                  //     child: CurrentLocation(pos: pos)),
-                  // Positioned(
-                  //     top: SizeConfig.safeBlockVertical * 2,
-                  //     left: SizeConfig.safeBlockHorizontal * 2,
-                  //     right: SizeConfig.safeBlockHorizontal * 2,
-                  //     child: date_time(now: _now)),
+
 
 
 
@@ -231,20 +222,19 @@ class _HomePageState extends ConsumerState<HomePage> {
 
                       child: Column(
                         children: [
-                          // Flexible(flex: 1, child: date_time(now: _now)),
-                          // SizedBox(
-                          //   height: SizeConfig.safeBlockVertical,
-                          // ),
-                          // Flexible(
-                          //   flex: 1,
-                          //   child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.end,
-                          //     crossAxisAlignment: CrossAxisAlignment.end,
-                          //     children: [
-                          //       CurrentLocation(pos: pos),
-                          //     ],
-                          //   ),
-                          // ),
+                          Flexible(flex: 1, child: SizedBox()),
+                          SizedBox(
+                            height: SizeConfig.safeBlockVertical,
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                              ],
+                            ),
+                          ),
 
                           SizedBox(
                             height: SizeConfig.safeBlockVertical,

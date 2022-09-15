@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: Apache-2.0
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,8 +20,8 @@ class _GetConfigState extends ConsumerState<GetConfig> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final configStateProvider = ref.read(ConfigStateprovider.notifier);
 
-      // String configFilePath = '/etc/xdg/AGL/dashboard_config.yaml';
-      String configFilePath = '/Users/Smart/Desktop/test/nav_config.yaml';
+      String configFilePath = '/Users/Smart/Desktop/test/dashboard_config.yaml';
+
 
       final configFile = File(configFilePath);
       configFile.readAsString().then((content) {

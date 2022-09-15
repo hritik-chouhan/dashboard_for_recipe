@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: Apache-2.0
-
 class VSPath {
   static const String vehicleSpeed = "Vehicle.Speed";
   static const String vehicleEngineRPM =

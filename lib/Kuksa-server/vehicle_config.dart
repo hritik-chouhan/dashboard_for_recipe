@@ -1,11 +1,8 @@
-// SPDX-License-Identifier: Apache-2.0
-
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:dashboard_app/config.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:latlng/latlng.dart';
 import 'package:http/http.dart' as http;
 
 

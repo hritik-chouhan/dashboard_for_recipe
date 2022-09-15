@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: Apache-2.0
-
 import 'dart:io';
 import 'package:dashboard_app/Kuksa-server/vehicle_config.dart';
 import 'package:flutter/material.dart';
