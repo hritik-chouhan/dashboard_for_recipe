@@ -22,8 +22,8 @@ class _GetConfigState extends ConsumerState<GetConfig> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final configStateProvider = ref.read(ConfigStateprovider.notifier);
 
-      String configFilePath = '/etc/xdg/AGL/dashboard_config.yaml';
-      // String configFilePath = '/Users/Smart/Desktop/test/dashboard_config.yaml';
+      // String configFilePath = '/etc/xdg/AGL/dashboard_config.yaml';
+      String configFilePath = '/Users/Smart/Desktop/test/nav_config.yaml';
 
       final configFile = File(configFilePath);
       configFile.readAsString().then((content) {
@@ -31,7 +31,6 @@ class _GetConfigState extends ConsumerState<GetConfig> {
         configStateProvider.update(
           hostname: yamlMap['hostname'],
           port: yamlMap['port'],
-          mapboxAccessToken: yamlMap['mapboxAccessToken'],
           kuksaAuthToken: yamlMap['kuskaAuthToken'],
         );
       });
@@ -43,8 +42,8 @@ class _GetConfigState extends ConsumerState<GetConfig> {
     final config = ref.watch(ConfigStateprovider);
     if (config.hostname == "" ||
         config.port == 0 ||
-        config.kuksaAuthToken == "" ||
-        config.mapboxAccessToken == "") {
+        config.kuksaAuthToken == ""
+        ) {
       return Scaffold(
         body: Center(
             child: Column(
@@ -68,25 +67,21 @@ class Config {
     required this.hostname,
     required this.port,
     required this.kuksaAuthToken,
-    required this.mapboxAccessToken,
 
   });
   final String hostname;
   final int port;
   final String kuksaAuthToken;
-  final String mapboxAccessToken;
 
   Config copywith({
     String? hostname,
     int? port,
     String? kuksaAuthToken,
-    String? mapboxAccessToken,
   }) =>
       Config(
         hostname: hostname ?? this.hostname,
         port: port ?? this.port,
         kuksaAuthToken: kuksaAuthToken ?? this.kuksaAuthToken,
-        mapboxAccessToken: mapboxAccessToken ?? this.mapboxAccessToken,
       );
 }
 
@@ -100,19 +95,16 @@ class ConfigStateNotifier extends StateNotifier<Config> {
     hostname: "",
     port: 0,
     kuksaAuthToken: "",
-    mapboxAccessToken: "",
   );
   void update({
     String? hostname,
     int? port,
     String? kuksaAuthToken,
-    String? mapboxAccessToken,
   }) {
     state = state.copywith(
       hostname: hostname,
       port: port,
       kuksaAuthToken: kuksaAuthToken,
-      mapboxAccessToken: mapboxAccessToken,
     );
   }
 }

@@ -38,13 +38,4 @@ Future<WebSocket> connect(HttpClient client, ref) async {
   return socket;
 }
 
-Future<Map> getAdress(LatLng pos,ref) async {
-  final config = ref.read(ConfigStateprovider);
 
-
-  var url =
-      'https://api.mapbox.com/geocoding/v5/mapbox.places/${pos.longitude},${pos.latitude}.json?&access_token=${config.mapboxAccessToken}';
-  http.Response response = await http.get(Uri.parse(url));
-  Map data = json.decode(response.body);
-  return data;
-}

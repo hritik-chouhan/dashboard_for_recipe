@@ -30,9 +30,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     final vehicle = ref.watch(vehicleSignalProvider);
-    LatLng pos = LatLng(vehicle.currentLatitude, vehicle.currentLongitude);
 
-    DateTime _now = ref.watch(DateTimeProvider);
 
 
 
@@ -50,15 +48,15 @@ class _HomePageState extends ConsumerState<HomePage> {
                       color: Colors.black87,
                     ),
                   ),
-                  Positioned(
-                      top: SizeConfig.safeBlockVertical * 8,
-                      right: SizeConfig.safeBlockHorizontal * 3,
-                      child: CurrentLocation(pos: pos)),
-                  Positioned(
-                      top: SizeConfig.safeBlockVertical * 2,
-                      left: SizeConfig.safeBlockHorizontal * 2,
-                      right: SizeConfig.safeBlockHorizontal * 2,
-                      child: date_time(now: _now)),
+                  // Positioned(
+                  //     top: SizeConfig.safeBlockVertical * 8,
+                  //     right: SizeConfig.safeBlockHorizontal * 3,
+                  //     child: CurrentLocation(pos: pos)),
+                  // Positioned(
+                  //     top: SizeConfig.safeBlockVertical * 2,
+                  //     left: SizeConfig.safeBlockHorizontal * 2,
+                  //     right: SizeConfig.safeBlockHorizontal * 2,
+                  //     child: date_time(now: _now)),
 
 
 
@@ -233,20 +231,20 @@ class _HomePageState extends ConsumerState<HomePage> {
 
                       child: Column(
                         children: [
-                          Flexible(flex: 1, child: date_time(now: _now)),
-                          SizedBox(
-                            height: SizeConfig.safeBlockVertical,
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                CurrentLocation(pos: pos),
-                              ],
-                            ),
-                          ),
+                          // Flexible(flex: 1, child: date_time(now: _now)),
+                          // SizedBox(
+                          //   height: SizeConfig.safeBlockVertical,
+                          // ),
+                          // Flexible(
+                          //   flex: 1,
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.end,
+                          //     crossAxisAlignment: CrossAxisAlignment.end,
+                          //     children: [
+                          //       CurrentLocation(pos: pos),
+                          //     ],
+                          //   ),
+                          // ),
 
                           SizedBox(
                             height: SizeConfig.safeBlockVertical,
