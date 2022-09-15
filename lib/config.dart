@@ -20,7 +20,8 @@ class _GetConfigState extends ConsumerState<GetConfig> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final configStateProvider = ref.read(ConfigStateprovider.notifier);
 
-      String configFilePath = '/Users/Smart/Desktop/test/dashboard_config.yaml';
+      String configFilePath = '/etc/xdg/AGL/dashboard_config.yaml';
+
 
 
       final configFile = File(configFilePath);
