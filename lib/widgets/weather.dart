@@ -1,4 +1,4 @@
-
+// SPDX-License-Identifier: Apache-2.0
 import 'package:dashboard_app/size.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
